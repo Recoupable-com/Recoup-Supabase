@@ -21,14 +21,6 @@ ALTER TABLE public.memory_emails ENABLE ROW LEVEL SECURITY;
 CREATE INDEX IF NOT EXISTS memory_emails_memory_idx 
   ON public.memory_emails(memory);
 
--- Create index on email_id for faster lookups
-CREATE INDEX IF NOT EXISTS memory_emails_email_id_idx 
-  ON public.memory_emails(email_id);
-
--- Create index on message_id for faster lookups
-CREATE INDEX IF NOT EXISTS memory_emails_message_id_idx 
-  ON public.memory_emails(message_id);
-
 -- Create index on created_at for sorting
 CREATE INDEX IF NOT EXISTS memory_emails_created_at_idx 
   ON public.memory_emails(created_at);
