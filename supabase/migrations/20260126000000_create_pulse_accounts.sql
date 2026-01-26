@@ -18,7 +18,3 @@ ALTER TABLE public.pulse_accounts ENABLE ROW LEVEL SECURITY;
 -- Create index on account_id for faster lookups
 CREATE INDEX IF NOT EXISTS pulse_accounts_account_id_idx
   ON public.pulse_accounts(account_id);
-
--- Grant permissions
-GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.pulse_accounts TO authenticated;
-GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.pulse_accounts TO service_role;
