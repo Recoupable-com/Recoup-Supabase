@@ -4,3 +4,6 @@ CREATE TABLE account_snapshots (
   created_at TIMESTAMPTZ DEFAULT NOW(),
   expires_at TIMESTAMPTZ NOT NULL
 );
+
+-- Enable Row Level Security
+ALTER TABLE public.account_snapshots ENABLE ROW LEVEL SECURITY;
