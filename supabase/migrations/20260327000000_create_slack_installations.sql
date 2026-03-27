@@ -23,7 +23,7 @@ create policy "Org members can view their installations"
   for select
   using (
     organization_id in (
-      select account_id from public.account_organization_ids
+      select organization_id from public.account_organization_ids
       where account_id = auth.uid()
     )
   );
@@ -34,7 +34,7 @@ create policy "Org members can insert installations"
   for insert
   with check (
     organization_id in (
-      select account_id from public.account_organization_ids
+      select organization_id from public.account_organization_ids
       where account_id = auth.uid()
     )
   );
@@ -45,7 +45,7 @@ create policy "Org members can update installations"
   for update
   using (
     organization_id in (
-      select account_id from public.account_organization_ids
+      select organization_id from public.account_organization_ids
       where account_id = auth.uid()
     )
   );
@@ -56,7 +56,7 @@ create policy "Org members can delete installations"
   for delete
   using (
     organization_id in (
-      select account_id from public.account_organization_ids
+      select organization_id from public.account_organization_ids
       where account_id = auth.uid()
     )
   );
